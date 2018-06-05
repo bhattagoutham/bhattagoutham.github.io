@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link href="css/animate.css" rel="stylesheet">
+<style>
+.carousel-caption{
+    position:static;
+    color: black;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 30px;
+  color: green;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 30px;
+  color: green;
+}
+.carousel {
+	height: 500px;
+	width: 360px;
+}
+.carousel-indicators li {
+  background-color: #999;
+  background-color: rgba(70,70,70,.25);
+}
+
+.carousel-indicators .active {
+  background-color: green;
+}
+
+.test-box {
+
+  text-align: left;
+  padding: 5px;
+  font-family:'Verdana';
+  font-size: 14px;
+  margin-left: 60px;
+  margin-top: 20px;
+  border: 5px solid green ;
+  border-radius: 5px;
+  width:250px;
+  height:300px;
+
+
+}
+.test-patient {
+  font-family:'Verdana'; 
+  font-size: 14px;
+  text-align: left; 
+  margin-top: 5px;
+}
+</style>
+
+</head>
+
+<body class="fade-in one" onload="init_carousel()">
+<div style="margin-top: 15px; margin-bottom: 20px;">
+<h4 style="color:#61af3d"><i>Testimonials</i></h4>
+</div>
+
+<div class = "row">
+  <div class = "col-xs-12" style="padding-left: 0 ">
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+<!-- <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+</ul> -->
+
+
+<div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-caption">
+	    <p class="test-box">
+	    I was diagonaised for +ve well diff. sq. cell Carcinoius Tounge at 46y. After multiple chemotherapy and dissection sessions, there was no sign of improvement. I decided to go for alternative medicen and consulted Dr. Badri and started taking his medicens. Within 1 week my symptoms gradually reduced. Eventually after 2 months I was tested -ve.
+	     </p>
+		<span class="test-patient"><i> Mr.Patient </i> </span>
+	  </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption">
+	    <p class="test-box">
+      I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are. </p>
+		<span class="test-patient"><i> Mr.Patient </i> </span>
+	  </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption">
+	    <p class="test-box">
+      I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are. </p>
+		<span class="test-patient"><i> Mr.Patient </i> </span>
+	  </div>
+    </div>
+</div>
+
+<!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
+	<span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#demo" data-slide="next">
+	<span class="carousel-control-next-icon"></span>
+</a> -->
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  
+  function init_carousel() {
+
+      if (window.innerWidth < 340) {
+        console.log(window.innerWidth);
+        $('.test-box').css('margin-left', '15px');
+
+      // var offset = 0;
+      // $('.carousel').css('height', (window.innerHeight).toString() + 'px');
+      // // $('.carousel').css('width', (window.innerWidth+offset).toString() + 'px');
+      // var w = Math.round(window.innerWidth/1.5);
+      // $('.test-box').css('height', (window.innerHeight).toString() + 'px');
+      // $('.test-box').css('width', w.toString() + 'px');
+
+      
+    }
+  }
+
+</script>
+
+
+</body>
+</html>

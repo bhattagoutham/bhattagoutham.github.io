@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<title>Veeramma Nursing Home</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link href="css/customstyle.css" rel="stylesheet">
+</head>
+
+<body onload="homeBtnClick('about.htm','visit.html')" style="background-color:#d5e3b5;">
+
+	<div class="container" >
+        
+        <div class="row">
+
+        	<div class="col-xs-12 col-sm-12 col-md-10 offset-md-1" style="background-color:#FFFFFF;"> 
+        		
+                <div class="row firstColBorder" >
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-7" style="padding:0;">
+                        <img src="pics/Logo.jpg" class="img-fluid mx-auto d-block" style="height:160px;width:100%;"> 
+                     </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-5" style="padding:0;" >
+
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                            <div class="carousel-inner" role="listbox">
+
+                                <div class="carousel-item active" >
+                                  <img class="d-block img-fluid" src="pics/header1.jpg" style="height:160px;width:100%;">
+                                </div>
+
+                                <div class="carousel-item">
+                                  <img class="d-block img-fluid" src="pics/header3.jpg" style="height:160px;width:100%;">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "row" >
+
+                    <nav class="navbar navbar-default navbar-expand-md w-100" >
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-color: green;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar" >
+                    <ul class="navbar-nav nav-fill w-100">
+                      <li class="nav-item active" style="margin:0;padding: 0;">
+                        <a class="nav-link navText" onClick = "homeBtnClick('about.htm','visit.html', 'home')" href="#">About us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link navText" onClick = "homeBtnClick('doc_details.htm','pic.htm', 'about')" href="#">Doctor</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link navText" onClick = "homeBtnClick('treatments.htm','testimonials.htm', 'treat')" href="#">Treatments</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link navText" onClick = "homeBtnClick('schedule.htm','contact.htm', 'visit')" href="#">Visit Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link navText" onClick = "homeBtnClick('gallery.htm','blank.htm', 'gallery')" href="#">Gallery</a>
+                      </li>
+                    </ul>
+                    </div>
+                    </nav> 
+                </div>
+
+                <div class = "row">
+                    <div id="divLeftCol" class = "col-xs-12 col-sm-12 col-md-8" >
+                        <iframe id = "leftCol" name = "leftCol" src = "..." width="100%" class="leftColStyle" frameborder="0" scrolling="no"></iframe> 
+                    </div>
+
+                    <div id="divRightCol" class = "col-xs-12 col-sm-12 col-md-4" >
+                        <iframe id = "rightCol" name = "rightCol" src = "..." width="100%" class="rightColStyle" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 offset-md-1" style="height:5px;background-color:green;"> 
+            </div>
+        </div>
+
+        <div class="row" style="height:15px;">
+        </div>
+
+    </div>
+
+<script type="text/javascript">
+
+function homeBtnClick(leftCol,rightCol, btn_nm) {
+
+	document.getElementsByName('leftCol')[0].src = leftCol;
+	document.getElementsByName('rightCol')[0].src = rightCol;
+
+	
+	setTimeout(function(){
+
+	if(btn_nm == 'treat' || btn_nm == 'visit') {
+		$('#divLeftCol').removeClass("col-md-12");
+		$('#divLeftCol').removeClass("col-md-8");
+		$('#divRightCol').removeClass("col-md-4");
+
+		$('#divLeftCol').addClass("col-md-7");
+		$('#divRightCol').addClass("col-md-5");
+
+
+	} else if (btn_nm == 'gallery') {
+
+		// regardless remove the class col-md-8,7 from left
+		$('#divLeftCol').removeClass("col-md-8");
+		$('#divLeftCol').removeClass("col-md-7");
+		
+		// add col-md-12 to left
+		$('#divLeftCol').addClass("col-md-12");
+		console.log('gallery switched')
+
+	} else {
+
+		var test1 = $('#divLeftCol').hasClass("col-md-7");
+		var test2 = $('#divLeftCol').hasClass("col-md-12");
+
+		if(test1 || test2) {
+			$('#divLeftCol').removeClass("col-md-12");
+			$('#divLeftCol').removeClass("col-md-7");
+			$('#divRightCol').removeClass("col-md-5");
+
+			$('#divLeftCol').addClass("col-md-8");
+			$('#divRightCol').addClass("col-md-4");
+
+		}
+
+		if (window.innerWidth <= 768 ) {
+			$('#divRightCol').css('padding-left', '20px');			
+		}
+	}
+
+	var offset = 20;
+	leftColHeight = document.getElementById("leftCol").contentWindow.document.body.offsetHeight +offset;
+	leftColHeight=leftColHeight.toString();
+	
+	rightColHeight = document.getElementById("rightCol").contentWindow.document.body.offsetHeight +offset;
+	rightColHeight =rightColHeight.toString();
+
+	$('.leftColStyle').css('height', leftColHeight+'px');
+	$('.rightColStyle').css('height', rightColHeight+'px');
+
+	}, 300);
+
+	
+
+}
+
+	
+
+   	// console.log('orignal_height:',orignal_height);
+	// console.log('win_height', window.innerHeight);
+	// console.log('win_width',  window.innerWidth);
+	// console.log('set_left:',leftColHeight);
+	// console.log('set_right:',rightColHeight);
+	// console.log('actualleftheight:',document.getElementById("leftCol").contentWindow.document.body.offsetHeight);
+	// console.log('actualrightheight:',document.getElementById("rightCol").contentWindow.document.body.offsetHeight);
+
+	// if (window.innerWidth <= 768) {
+
+ //    	var factor = 2.7;
+ //    	var orignal_height = parseInt(heightVal);
+ //    	var leftColHeight =  Math.round(1280 * window.innerHeight * orignal_height) / (720 *factor* 350);
+ //    	var rightColHeight = Math.round(1280 * window.innerHeight * orignal_height) / (720 *(factor+1)* 250);
+
+ 
+ //    } else {
+
+ //    	$('.leftColStyle').css('height', heightVal+'px');
+	// 	$('.rightColStyle').css('height', heightVal+'px');
+
+ //    }
+	
+  // did not work
+ // 	var leftColHeight = $('.leftColStyle').contentWindow.document.body.offsetHeight ;
+ // 	var rightColHeight = $('.righttColStyle').contentWindow.document.body.offsetHeight;
+ // 	leftColHeight = leftColHeight + 135;
+ // 	rightColHeight = rightColHeight + 135;
+ // did not work
+// heightVal = parseInt((parseInt(heightVal)*window.innerHeight)/658)+60;
+// heightVal = heightVal.toString();
+
+
+
+$('#rightCol').on('load',function(){
+
+    var iframe = $('#rightCol').contents();
+    
+    iframe.find("#treatments").click(function(){
+          homeBtnClick('treatments.htm','testimonials.htm', '600'); 
+    });
+});
+
+$('#rightCol').on('load',function(){
+
+    var iframe = $('#rightCol').contents();
+    
+    iframe.find("#consultation").click(function(){
+          homeBtnClick('schedule.htm','contact.htm', '380')
+    });
+});
+
+</script>
+
+</body> 
+</html>
