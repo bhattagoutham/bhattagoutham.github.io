@@ -60,32 +60,32 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavbar" >
                     <ul class="navbar-nav nav-fill w-100">
                       <li class="nav-item active" style="margin:0;padding: 0;">
-                        <a class="nav-link navText" onClick = "homeBtnClick('about.htm','visit.html', 'home')" href="#">About us</a>
+                        <a class="nav-link navText" onClick = "homeBtnClick('about.htm','visit.html', 'home')" href="#contentArea">About us</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link navText" onClick = "homeBtnClick('doc_details.htm','pic.htm', 'about')" href="#">Doctor</a>
+                        <a class="nav-link navText" onClick = "homeBtnClick('doc_details.htm','pic.htm', 'about')" href="#contentArea">Doctor</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link navText" onClick = "homeBtnClick('treatments.htm','testimonials.htm', 'treat')" href="#">Treatments</a>
+                        <a class="nav-link navText" onClick = "homeBtnClick('treatments.htm','testimonials.htm', 'treat')" href="#contentArea">Treatments</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link navText" onClick = "homeBtnClick('schedule.htm','contact.htm', 'visit')" href="#">Visit Us</a>
+                        <a class="nav-link navText" onClick = "homeBtnClick('schedule.htm','contact.htm', 'visit')" href="#contentArea">Visit Us</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link navText" onClick = "homeBtnClick('gallery.htm','blank.htm', 'gallery')" href="#">Gallery</a>
+                        <a class="nav-link navText" onClick = "homeBtnClick('gallery.htm','blank.htm', 'gallery')" href="#contentArea">Gallery</a>
                       </li>
                     </ul>
                     </div>
                     </nav> 
                 </div>
 
-                <div class = "row">
+                <div class = "row" id="contentArea">
                     <div id="divLeftCol" class = "col-xs-12 col-sm-12 col-md-8" >
-                        <iframe id = "leftCol" name = "leftCol" src = "blank.htm" width="100%" class="leftColStyle" frameborder="0" scrolling="no"></iframe> 
+                        <iframe id = "leftCol" name = "leftCol" src = "about.htm" width="100%" class="leftColStyle" frameborder="0" scrolling="no"></iframe> 
                     </div>
 
                     <div id="divRightCol" class = "col-xs-12 col-sm-12 col-md-4" >
-                        <iframe id = "rightCol" name = "rightCol" src = "blank.htm" width="100%" class="rightColStyle" frameborder="0" scrolling="no"></iframe>
+                        <iframe id = "rightCol" name = "rightCol" src = "visit.htm" width="100%" class="rightColStyle" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
 
@@ -112,6 +112,8 @@ function homeBtnClick(leftCol,rightCol, btn_nm) {
 
 	
 	setTimeout(function(){
+
+  if (window.innerWidth >= 768) {
 
 	if(btn_nm == 'treat' || btn_nm == 'visit') {
 		$('#divLeftCol').removeClass("col-md-12");
@@ -147,6 +149,8 @@ function homeBtnClick(leftCol,rightCol, btn_nm) {
 
 		}
 
+  }
+
 		if (window.innerWidth <= 768 ) {
 			$('#divRightCol').css('padding-left', '20px');			
 		}
@@ -167,42 +171,6 @@ function homeBtnClick(leftCol,rightCol, btn_nm) {
 	
 
 }
-
-	
-
-   	// console.log('orignal_height:',orignal_height);
-	// console.log('win_height', window.innerHeight);
-	// console.log('win_width',  window.innerWidth);
-	// console.log('set_left:',leftColHeight);
-	// console.log('set_right:',rightColHeight);
-	// console.log('actualleftheight:',document.getElementById("leftCol").contentWindow.document.body.offsetHeight);
-	// console.log('actualrightheight:',document.getElementById("rightCol").contentWindow.document.body.offsetHeight);
-
-	// if (window.innerWidth <= 768) {
-
- //    	var factor = 2.7;
- //    	var orignal_height = parseInt(heightVal);
- //    	var leftColHeight =  Math.round(1280 * window.innerHeight * orignal_height) / (720 *factor* 350);
- //    	var rightColHeight = Math.round(1280 * window.innerHeight * orignal_height) / (720 *(factor+1)* 250);
-
- 
- //    } else {
-
- //    	$('.leftColStyle').css('height', heightVal+'px');
-	// 	$('.rightColStyle').css('height', heightVal+'px');
-
- //    }
-	
-  // did not work
- // 	var leftColHeight = $('.leftColStyle').contentWindow.document.body.offsetHeight ;
- // 	var rightColHeight = $('.righttColStyle').contentWindow.document.body.offsetHeight;
- // 	leftColHeight = leftColHeight + 135;
- // 	rightColHeight = rightColHeight + 135;
- // did not work
-// heightVal = parseInt((parseInt(heightVal)*window.innerHeight)/658)+60;
-// heightVal = heightVal.toString();
-
-
 
 $('#rightCol').on('load',function(){
 
